@@ -7,7 +7,9 @@
 * <a href="#description">Описание</a>
 * <a href="#stack">Cтек технологий</a>
 * <a href="#object">Реализованные проверки</a>
-* <a href="#console">Команды запуска тестов</a>
+* <a href="#launch">Запуск проекта</a>
+   + <a href="#gradle-command">Gradle</a>
+   + <a href="#idea-config">Запуск конфигурации в IDEA</a>
 * <a>Скриншоты и видео</a>
   + <a href="#selenoid">Selenoid</a>
   + <a href="#jenkins">Jenkins</a>
@@ -40,6 +42,7 @@
 <a href="https://www.java.com/"><img alt="Java" height="50" src="external/Java.svg" width="50"/></a>
 <a href="https://junit.org/junit5/"><img alt="JUnit 5" height="50" src="external/JUnit5.svg" width="50"/></a>
 <a href="https://selenide.org/"><img alt="Selenide" height="50" src="external/Selenide.svg" width="50"/></a>
+<a href="https://rest-assured.io/"><img alt="REST Assured" height="50" src="external/Rest-Assured.svg" width="50"/></a>
 <a href="https://gradle.org/"><img alt="Gradle" height="50" src="external/Gradle.svg" width="50"/></a>
 <a href="https://github.com/allure-framework/"><img alt="Allure" height="50" src="external/Allure.svg" width="50"/></a>
 <a href="https://www.jenkins.io/"><img alt="Jenkins" height="50" src="external/Jenkins.svg" width="50"/></a>
@@ -54,22 +57,43 @@
 <a id="object"></a>
 ## :mag: Реализованные проверки
 
-
-<a id="console"></a>
-## :computer: Команды запуска тестов
+<a id="launch"></a>
+# :computer: Запуск проекта
+  
+<a id="gradle-command"></a>
+## Gradle
+Для запуска тестов с помощью Gradle используется команда:
 ```bash
-clean
-test
--DremoteUrl=${REMOTE_URL}
--DbrowserName=${BROWSER_NAME}
--DbrowserSize=${BROWSER_SIZE}
--DbaseUrl=${BASE_URL}
--DvideoStorage=${VIDEO_STORAGE}
--DbrowserVersion=${BROWSER_VERSION}
+gradle clean <tag> -Dplatform=<platform> -Denv=<env>
 ```
+`tag` - выбор вида тестов:
+>- *api*
+>- *ui*
+>- *mobile*
+  
+`platform` - платформа:
+>- *\<не задаётся\> (для API тестов)*
+>- *ui*
+>- *mobile*
+  
+`env` - окружение, на котором будут выполнятся тесты:
+>- *\<не задаётся\> (для API тестов)*
+>- *remote (для UI)*
+>- *real (для Mobile)*
+>- *browserstack (для Mobile)*
+>- *local (для UI и Mobile тестов)*
+
+В зависимости от выбранной платформы и окружения, будет использоваться определенный property file
+
+<a id="idea-config"></a>  
+## Запуск конфигурации в IDEA
+Для удобства запуска тестов конфигурационные файлы IDEA добавлены в репозиторий
+<p  align="center">
+<img src="external/idea-conf.png" alt="IDEARunConfigurations" width="550">
+</p>
 
 <a id="selenoid"></a>
-## <a href="https://selenoid.autotests.cloud/video/4a544544d069a501ee461083c9babb79.mp4"><img alt="Selenoid" height="50" src="external/logos/Selenoid.svg" width="50"/>Selenoid</a>
+## <a href="https://selenoid.autotests.cloud/video/4a544544d069a501ee461083c9babb79.mp4"><img alt="Selenoid" height="50" src="external/Selenoid.svg" width="50"/>Selenoid</a>
 
 <video src="https://user-images.githubusercontent.com/110110734/193814550-cef6ecdb-f702-4fa5-a6cf-4cf6cc523097.mp4"
 controls="controls" style="max-width: 730px;" poster="/external/logos/Selenoid.svg">
@@ -77,7 +101,7 @@ controls="controls" style="max-width: 730px;" poster="/external/logos/Selenoid.s
 </video>
 
 <a id="jenkins"></a>
-##  <a href="https://jenkins.autotests.cloud/job/Nurekenov-homework16/"><img alt="Jenkins" height="50" src="external/logos/Jenkins.svg" width="50"/>Jenkins</a>
+##  <a href="https://jenkins.autotests.cloud/job/Nurekenov-homework16/"><img alt="Jenkins" height="50" src="external/Jenkins.svg" width="50"/>Jenkins</a>
   
 <a href="https://jenkins.autotests.cloud/job/Nurekenov-homework16/">
 
@@ -85,7 +109,7 @@ controls="controls" style="max-width: 730px;" poster="/external/logos/Selenoid.s
 </a>
 
 <a id="allure"></a>
-## <a href="https://jenkins.autotests.cloud/job/Nurekenov-homework16/allure//"><img alt="Allure" height="50" src="external/logos/Allure.svg" width="50"/>Allure</a>
+## <a href="https://jenkins.autotests.cloud/job/Nurekenov-homework16/allure//"><img alt="Allure" height="50" src="external/Allure.svg" width="50"/>Allure</a>
 
 <table>
     <tr>
@@ -115,6 +139,6 @@ controls="controls" style="max-width: 730px;" poster="/external/logos/Selenoid.s
 </table>
 
 <a id="telegram"></a>
-## <a href="https://t.me/MarketKzNotificationBot"><img alt="Telegram" height="50" src="external/logos/Telegram.svg" width="50"/>Telegram</a>
+## <a href="https://t.me/MarketKzNotificationBot"><img alt="Telegram" height="50" src="external/Telegram.svg" width="50"/>Telegram</a>
 
 ![Telegram screenshot](https://user-images.githubusercontent.com/110110734/193813963-0e4ec16a-b6d3-45d3-bf0d-dc90eb689380.png)
