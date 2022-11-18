@@ -65,8 +65,7 @@ public final class ChitaiGorodUITests extends UITestBase {
 
         step(String.format("Открытие страницу %s", categoryName), () -> {
             mainPage.openSouvenirsPage();
-            catalogPage.hideNotification()
-                    .openCalendarsPage();
+            catalogPage.openCalendarsPage();
         });
 
         step(String.format("Проверка открытия страницы %s", categoryName), () -> {

@@ -52,6 +52,15 @@ tasks.withType(Test) {
             includeTags System.getProperty("tag")
         }
     }
+    if (System.getProperty("tag") == "UI") {
+        systemProperties += [
+                'junit.jupiter.execution.parallel.enabled'             : true,
+                'junit.jupiter.execution.parallel.mode.default'        : 'concurrent',
+                'junit.jupiter.execution.parallel.mode.classes.default': 'same_thread',
+                'junit.jupiter.execution.parallel.config.strategy'     : 'custom',
+                'junit.jupiter.execution.parallel.config.custom.class' : 'chitaigorod.helpers.CustomStrategy'
+        ]
+    }
 
     testLogging {
         lifecycle {
@@ -59,34 +68,4 @@ tasks.withType(Test) {
             exceptionFormat "short"
         }
     }
-}
-
-task api(type: Test) {
-    useJUnitPlatform {
-        includeTags "API"
-    }
-}
-
-task mobile(type: Test) {
-    useJUnitPlatform {
-        includeTags "MOBILE"
-    }
-}
-
-task ui(type: Test) {
-    useJUnitPlatform {
-        includeTags "UI"
-    }
-
-    systemProperties += [
-            'junit.jupiter.execution.parallel.enabled'             : true,
-            'junit.jupiter.execution.parallel.mode.default'        : 'concurrent',
-            'junit.jupiter.execution.parallel.mode.classes.default': 'same_thread',
-            'junit.jupiter.execution.parallel.config.strategy'     : 'custom',
-            'junit.jupiter.execution.parallel.config.custom.class' : 'chitaigorod.helpers.CustomStrategy'
-    ]
-}
-
-test {
-    useJUnitPlatform()
 }

@@ -16,7 +16,7 @@ public final class ChitaiGorodMobileTests extends MobileTestBase {
         });
     }
 
-    @Tag("MOBILE")
+    @Tag("Mobile")
     @Test
     @DisplayName("Поиск книги по названию")
     void searchBookTest() {
@@ -33,7 +33,7 @@ public final class ChitaiGorodMobileTests extends MobileTestBase {
         });
     }
 
-    @Tag("MOBILE")
+    @Tag("Mobile")
     @Test
     @DisplayName("Проверка добавления книги в корзину")
     void addBookToBasketTest() {
@@ -60,7 +60,7 @@ public final class ChitaiGorodMobileTests extends MobileTestBase {
         });
     }
 
-    @Tag("MOBILE")
+    @Tag("Mobile")
     @Test
     @DisplayName("Открытие страницы \"Календари\"")
     void openCalendarsPageTests() {
@@ -79,7 +79,7 @@ public final class ChitaiGorodMobileTests extends MobileTestBase {
     }
 
 
-    @Tag("MOBILE")
+    @Tag("Mobile")
     @Test
     @DisplayName("Смена города")
     void changeLocationTest() {
