@@ -93,52 +93,45 @@ gradle clean <tag> -Dplatform=<platform> -Denv=<env>
 </p>
 
 <a id="selenoid"></a>
-## <a href="https://selenoid.autotests.cloud/video/4a544544d069a501ee461083c9babb79.mp4"><img alt="Selenoid" height="50" src="external/Selenoid.svg" width="50"/>Selenoid</a>
+## <img alt="Selenoid" height="50" src="external/Selenoid.svg" width="50"/>Selenoid</a>
 
-<video src="https://user-images.githubusercontent.com/110110734/193814550-cef6ecdb-f702-4fa5-a6cf-4cf6cc523097.mp4"
-controls="controls" style="max-width: 730px;" poster="/external/logos/Selenoid.svg">
-Видео не доступно для этого браузера
-</video>
+Видео-пример выполнения UI-теста с помощью Selenoid
+
+<video src="https://user-images.githubusercontent.com/110110734/202859382-0d5509e0-a5a8-4c7f-9df0-9d8bcf16fc2f.mp4"
+controls="controls" style="max-width: 730px;" poster="/external/logos/Selenoid.svg"></video>
 
 <a id="jenkins"></a>
-##  <a href="https://jenkins.autotests.cloud/job/Nurekenov-homework16/"><img alt="Jenkins" height="50" src="external/Jenkins.svg" width="50"/>Jenkins</a>
-  
-<a href="https://jenkins.autotests.cloud/job/Nurekenov-homework16/">
+##  <a href="https://jenkins.autotests.cloud/job/chitai-gorod/"><img alt="Jenkins" height="50" src="external/Jenkins.svg" width="50"/>Jenkins</a>
 
-<img src="https://user-images.githubusercontent.com/110110734/193813994-88c78b62-b6d9-4d00-ac2a-d7eae8e491b7.png" alt="Jenkins">
+Страница проекта в Jenkins
+
+<a href="https://jenkins.autotests.cloud/job/chitai-gorod/"><img src="https://user-images.githubusercontent.com/110110734/202859544-d8c8b67d-1dcf-48b0-8d80-6170ec8f19a4.png" alt="Jenkins">
 </a>
 
 <a id="allure"></a>
-## <a href="https://jenkins.autotests.cloud/job/Nurekenov-homework16/allure//"><img alt="Allure" height="50" src="external/Allure.svg" width="50"/>Allure</a>
+## <a href="https://jenkins.autotests.cloud/job/chitai-gorod/allure/"><img alt="Allure" height="50" src="external/Allure.svg" width="50"/>Allure</a>
+
+Пример Allure отчёта
 
 <table>
     <tr>
         <td>
-        <a href="https://jenkins.autotests.cloud/job/Nurekenov-homework16/allure/">
-        <img src="https://user-images.githubusercontent.com/110110734/193815548-9ba63976-7543-438d-b4aa-51fea0db888e.png">
+        <a href="https://user-images.githubusercontent.com/110110734/202859651-ba7db225-1307-42d1-a756-acb5ee53464a.png">
+        <img src="https://user-images.githubusercontent.com/110110734/202859651-ba7db225-1307-42d1-a756-acb5ee53464a.png">
         </a>
         </td>
-        <td>
-        <a href="https://jenkins.autotests.cloud/job/Nurekenov-homework16/allure/#suites/ef54aae4465c6d48b51f0d82b2bbde21/238f0e3250120aee/">
-        <img src="https://user-images.githubusercontent.com/110110734/193815656-d60c090e-77ba-4f08-b4bb-d3860e2976a3.png">
-        </a>
-        </td>
-    </tr>
+        </tr>
         <tr>
         <td>
-        <a href="https://jenkins.autotests.cloud/job/Nurekenov-homework16/allure/#suites/ef54aae4465c6d48b51f0d82b2bbde21/238f0e3250120aee/">
-        <img src="https://user-images.githubusercontent.com/110110734/193815846-f7c8675e-ae5c-44b4-a451-a66a32037746.png">
+        <a href="https://user-images.githubusercontent.com/110110734/202859732-4dc2727f-69bf-4828-9d87-08ead0eb67e4.png">
+        <img src="https://user-images.githubusercontent.com/110110734/202859732-4dc2727f-69bf-4828-9d87-08ead0eb67e4.png">
         </a>
         </td>
-        <td>
-        <a href="https://jenkins.autotests.cloud/job/Nurekenov-homework16/allure/#suites/ef54aae4465c6d48b51f0d82b2bbde21/e86211dfbb768d26/">
-        <img src="https://user-images.githubusercontent.com/110110734/193815857-a19d8da8-d07f-4e2a-a4f4-893eae213dbf.png">
-        </a>
-        </td>
-    </tr>
 </table>
 
 <a id="telegram"></a>
-## <a href="https://t.me/MarketKzNotificationBot"><img alt="Telegram" height="50" src="external/Telegram.svg" width="50"/>Telegram</a>
+## <a href="https://t.me/chitai_gorod_tests_bot"><img alt="Telegram" height="50" src="external/Telegram.svg" width="50"/>Telegram</a>
 
-![Telegram screenshot](https://user-images.githubusercontent.com/110110734/193813963-0e4ec16a-b6d3-45d3-bf0d-dc90eb689380.png)
+Пример уведомления в Telegram-бот по окончании выполнения тестов
+
+![Telegram screenshot](https://user-images.githubusercontent.com/110110734/202859925-48e64223-96aa-41b1-9a32-2ca475a547c5.png)
