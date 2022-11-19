@@ -9,7 +9,6 @@
 * <a href="#object">Реализованные проверки</a>
 * <a href="#launch">Запуск проекта</a>
    + <a href="#gradle-command">Gradle</a>
-   + <a href="#idea-config">Запуск конфигурации в IDEA</a>
 * <a>Скриншоты и видео</a>
   + <a href="#selenoid">Selenoid</a>
   + <a href="#jenkins">Jenkins</a>
@@ -24,7 +23,6 @@
 - [x] Параллельное выполнение тестов с помощью `JUnit 5`
 - [x] Генерация рандомных значений с помощью библиотеки `Faker`
 - [x] Параметризованные билды `Jenkins`
-- [x] Конфигурационные файлы для запуска билдов с различными параметрами
 - [x] Конфиги с помощью библиотеки `Owner`
 - [x] Использование `POJO` для моделей для API тестов
 - [x] Использование Request/Response спецификаций для API тестов
@@ -81,13 +79,6 @@ gradle clean -Dtag=<tag> -Dplatform=<platform> -Denv=<env>
 >- *local (для UI и Mobile тестов)*
 
 В зависимости от выбранной платформы и окружения, будет использоваться определенный property file
-
-<a id="idea-config"></a>  
-## Запуск конфигурации в IDEA
-Для удобства запуска тестов конфигурационные файлы IDEA добавлены в репозиторий
-<p  align="center">
-<img src="external/idea-conf.png" alt="IDEARunConfigurations" width="550">
-</p>
 
 <a id="selenoid"></a>
 ## <img alt="Selenoid" height="50" src="external/Selenoid.svg" width="50"/>Selenoid</a>
