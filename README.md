@@ -27,12 +27,9 @@
 - [x] Конфигурационные файлы для запуска билдов с различными параметрами
 - [x] Конфиги с помощью библиотеки `Owner`
 - [x] Использование `POJO` для моделей для API тестов
-- [x] Objects serialization/deserialization for API requests/responses using `Jackson`
 - [x] Использование Request/Response спецификаций для API тестов
 - [x] Кастомный Allure listener для форматированного логирования API запросов/ответов
 - [x] Интеграция с `Allure TestOps`
-- [x] Autotests as test documentation
-- [x] Интеграция с `Jira`
 
 
 <a id="stack"></a>
@@ -64,7 +61,7 @@
 ## Gradle
 Для запуска тестов с помощью Gradle используется команда:
 ```bash
-gradle clean <tag> -Dplatform=<platform> -Denv=<env>
+gradle clean -Dtag=<tag> -Dplatform=<platform> -Denv=<env>
 ```
 `tag` - выбор вида тестов:
 >- *api*
