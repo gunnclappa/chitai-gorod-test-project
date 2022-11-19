@@ -6,7 +6,6 @@
 ## :bookmark_tabs: Содержание
 * <a href="#description">Описание</a>
 * <a href="#stack">Cтек технологий</a>
-* <a href="#object">Реализованные проверки</a>
 * <a href="#gradle-launch">Запуск проекта с помощью терминала</a>
 * <a href="#jenkins-launch">Запуск проекта с помощью Jenkins</a>
 * <a>Отчётность, скриншоты и видео</a>
@@ -49,9 +48,6 @@
 <a href="https://appium.io/"><img alt="Appium" height="45" src="external/Appium.svg" width="45"/></a>
 <a href="https://www.browserstack.com/"><img alt="Browserstack" height="45" src="external/Browserstack.svg" width="45"/></a>
 </div>
-
-<a id="object"></a>
-## :mag: Реализованные проверки
 
 <a id="gradle-launch"></a>
 ## :computer: Запуск проекта с помощью терминала
