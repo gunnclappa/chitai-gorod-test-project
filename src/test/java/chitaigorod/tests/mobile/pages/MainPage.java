@@ -5,7 +5,7 @@ import io.appium.java_client.AppiumBy;
 
 import static com.codeborne.selenide.Selenide.$;
 
-public final class MainPage {
+public class MainPage {
 
     private final SelenideElement searchField = $(AppiumBy.id("ru.chitaigorod.mobile:id/frameLayoutSearch"));
     private final SelenideElement catalog = $(AppiumBy
@@ -14,25 +14,25 @@ public final class MainPage {
     private final SelenideElement profile = $(AppiumBy
             .xpath("//android.widget.FrameLayout[@content-desc=\"Профиль\"]"));
 
-    public MainPage search() {
+    public final MainPage search() {
         searchField.click();
 
         return this;
     }
 
-    public MainPage openBasket() {
+    public final MainPage openBasket() {
         basket.click();
 
         return this;
     }
 
-    public MainPage openCatalog() {
+    public final MainPage openCatalog() {
         catalog.click();
 
         return this;
     }
 
-    public MainPage openProfile() {
+    public final MainPage openProfile() {
         profile.click();
 
         return this;

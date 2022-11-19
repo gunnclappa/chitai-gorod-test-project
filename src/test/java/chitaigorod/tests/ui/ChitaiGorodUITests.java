@@ -111,31 +111,30 @@ public final class ChitaiGorodUITests extends UITestBase {
 
     @Tag("UI")
     @Test
-    @DisplayName("Проверка отображения инфо-текста на странице Закладки")
-    void bookmarksInfoBlockTest() {
+    @DisplayName("Проверка добавления книги в корзину")
+    void addBookToBasketTest() {
 
-        final String infoBlockText = "Товары, которые не поступают в продажу в течение 4 месяцев, удаляются из списка.";
-        final String bookID = "2944827";
+        final String bookName = "Death Note";
+        final String buyText = "Купить";
 
-        step("Добавление книги в закладки через API", () -> {
-            bookmarksPageAPI.addBookToBookmarks(bookID)
-                    .setCookie();
+        step(String.format("Поиск книги %s", bookName), () -> {
+            mainPage.searchBook(bookName);
+
+            step(String.format("Проверка отображения книги %s", bookName), () -> {
+                searchPage.checkIfBookExist(bookName);
+            });
         });
 
-        step(String.format("Открытие страницы %s", baseUrl), () -> {
-            mainPage.openPage();
+        step(String.format("Нажать на кнопку %s", buyText), () -> {
+            searchPage.buyButtonClick(buyText);
         });
 
-        step("Открыть страницу Закладки", () -> {
-            mainPage.openBookmarksPage();
+        step("Открыть корзину", () -> {
+            mainPage.openBasketPage();
         });
 
-        step("Проверка отображен ия инфо-текста", () -> {
-            bookmarksPageUI.checkInfoBlock(infoBlockText);
-        });
-
-        step("Удаление книги из закладок через API", () -> {
-            bookmarksPageAPI.deleteBooksFromBookmarks(bookID);
+        step(String.format("Проверка отображения книги %s в корзине", bookName), () -> {
+            basketPage.checkBookInBasket(bookName);
         });
     }
 }

@@ -23,7 +23,7 @@ public class LocalAndRemoteWebDriver {
         Configuration.browser = webConfig.browserName();
         Configuration.browserSize = webConfig.browserSize();
         Configuration.baseUrl = webConfig.baseUrl();
-        //Configuration.pageLoadStrategy = "none";
+        Configuration.pageLoadStrategy = "eager";
 
         MutableCapabilities capabilities = new DesiredCapabilities();
 

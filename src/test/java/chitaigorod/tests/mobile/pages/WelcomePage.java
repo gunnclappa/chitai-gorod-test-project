@@ -6,13 +6,13 @@ import io.appium.java_client.AppiumBy;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.sleep;
 
-public final class WelcomePage {
+public class WelcomePage {
 
     private final SelenideElement nextButton = $(AppiumBy.id("ru.chitaigorod.mobile:id/buttonNext"));
     private final SelenideElement continueButton = $(AppiumBy.id("ru.chitaigorod.mobile:id/buttonProceed"));
     private final SelenideElement notNowButton = $(AppiumBy.id("ru.chitaigorod.mobile:id/buttonNotNow"));
 
-    public WelcomePage skip() {
+    public final WelcomePage skip() {
         sleep(5000);
         nextButton.click();
         nextButton.click();

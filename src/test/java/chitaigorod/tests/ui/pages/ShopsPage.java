@@ -22,5 +22,4 @@ public class ShopsPage {
 
         return this;
     }
-
 }

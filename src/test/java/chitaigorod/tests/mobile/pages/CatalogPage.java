@@ -7,7 +7,7 @@ import io.appium.java_client.AppiumBy;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
-public final class CatalogPage {
+public class CatalogPage {
 
     private final SelenideElement souvenirs = $(AppiumBy
             .xpath("//android.widget.LinearLayout[@content-desc=\"Сувениры\"]"));
@@ -16,19 +16,19 @@ public final class CatalogPage {
     private final SelenideElement toolbar = $(AppiumBy.id("ru.chitaigorod.mobile:id/toolbar"))
             .$(AppiumBy.className("android.widget.TextView"));
 
-    public CatalogPage openSouvenirsPage() {
+    public final CatalogPage openSouvenirsPage() {
         souvenirs.click();
 
         return this;
     }
 
-    public CatalogPage openCalendarsPage() {
+    public final CatalogPage openCalendarsPage() {
         calendars.click();
 
         return this;
     }
 
-    public CatalogPage checkCategory(final String category) {
+    public final CatalogPage checkCategory(final String category) {
         toolbar.shouldHave(Condition.text(category));
 
         return this;

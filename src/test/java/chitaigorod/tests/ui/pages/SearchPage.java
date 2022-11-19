@@ -32,7 +32,6 @@ public class SearchPage {
         return this;
     }
 
-
     public final SearchPage purchaseButtonClick() {
         purchaseButton.click();
 

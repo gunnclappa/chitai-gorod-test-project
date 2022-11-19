@@ -8,7 +8,8 @@ import static com.codeborne.selenide.Selenide.*;
 public class CatalogPage {
 
     private final SelenideElement headerText = $(".color_blue");
-    private final SelenideElement calendarsLink = $$("a.navigation__link").findBy(Condition.text("Календари"));
+    private final SelenideElement calendarsLink = $$("a.navigation__link")
+            .findBy(Condition.text("Календари"));
 
     public final CatalogPage openCalendarsPage() {
         calendarsLink.click();

@@ -7,9 +7,9 @@ import java.util.Map;
 import static chitaigorod.tests.api.specs.Specification.*;
 import static io.restassured.RestAssured.given;
 
-public class BookmarksPageAPI extends MainPage {
+public class BookmarksPage extends MainPage {
 
-    public final BookmarksPageAPI addBookToBookmarks(final String bookID) {
+    public final BookmarksPage addBookToBookmarks(final String bookID) {
 
         Map<String, String> paramsForAddBookToBookmarks = ParamsForAPI.paramsForAddBookToBookmarks(bookID);
 
@@ -35,7 +35,7 @@ public class BookmarksPageAPI extends MainPage {
                         + ".@data-book-id");
     }
 
-    public final BookmarksPageAPI deleteBooksFromBookmarks(final String bookID) {
+    public final BookmarksPage deleteBooksFromBookmarks(final String bookID) {
 
         Map<String, String> paramsForDeleteBookFromBookmarks = ParamsForAPI.paramsForDeleteBookFromBookmarks(bookID);
 

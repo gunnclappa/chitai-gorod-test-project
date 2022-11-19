@@ -13,4 +13,7 @@ public interface AppConfig extends Config {
 
     @Key("cookieValue")
     String cookieValue();
+
+    @Key("data[login]")
+    String login();
 }

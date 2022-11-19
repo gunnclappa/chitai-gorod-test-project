@@ -82,12 +82,12 @@ public class TestBase {
             AllureAttachments.addBrowserConsoleLogs();
         }
 
+        Selenide.closeWebDriver();
+
         if (PLATFORM.equals("ui") && ENV.equals("remote")) {
             AllureAttachments.addVideo(sessionId);
         } else if (PLATFORM.equals("mobile") && ENV.equals("browserstack")) {
             AllureAttachments.addVideoBrowserstack(sessionId);
         }
-
-        Selenide.closeWebDriver();
     }
 }

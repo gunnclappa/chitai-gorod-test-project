@@ -6,11 +6,11 @@ import io.appium.java_client.AppiumBy;
 
 import static com.codeborne.selenide.Selenide.$;
 
-public final class BasketPage {
+public class BasketPage {
 
     private final SelenideElement book = $(AppiumBy.id("ru.chitaigorod.mobile:id/textViewCartProductTitle"));
 
-    public BasketPage checkBookInBasket(final String value) {
+    public final BasketPage checkBookInBasket(final String value) {
         book.shouldHave(Condition.text(value));
 
         return this;
