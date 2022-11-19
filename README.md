@@ -15,7 +15,7 @@
   + <a href="#browserstack">Browserstack</a>
   + <a href="#telegram">Telegram</a>
   
-## <a name="description">Описание</a>
+## 📓 <a name="description">Описание</a>
 Проект содержит в себе тесты на UI, API и Mobile (Android)\
 Список того, что было реализовано в проекте:
 - [x] Реализация `Page Object` с использованием `Chain of Invocations`
@@ -76,7 +76,7 @@ gradle clean test -Dtag=<tag> -Dplatform=<platform> -Denv=<env>
 В зависимости от выбранной платформы и окружения, будет использоваться определенный property file
 
 <a id="jenkins-launch"></a>
-##  <a href="https://jenkins.autotests.cloud/job/chitai-gorod/"><img alt="Jenkins" height="50" src="external/Jenkins.svg" width="50"/>Jenkins</a>
+##  <a href="https://jenkins.autotests.cloud/job/chitai-gorod/"><img alt="Jenkins" height="50" src="external/Jenkins.svg" width="50"/>Запуск проекта с помощью Jenkins</a>
 
 Страница проекта в Jenkins
 
