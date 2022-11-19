@@ -7,12 +7,13 @@
 * <a href="#description">Описание</a>
 * <a href="#stack">Cтек технологий</a>
 * <a href="#object">Реализованные проверки</a>
-* <a href="#launch">Запуск проекта</a>
-   + <a href="#gradle-command">Gradle</a>
-* <a>Скриншоты и видео</a>
-  + <a href="#selenoid">Selenoid</a>
-  + <a href="#jenkins">Jenkins</a>
+* <a href="#gradle-launch">Запуск проекта с помощью терминала</a>
+* <a href="#jenkins-launch">Запуск проекта с помощью Jenkins</a>
+* <a>Отчётность, скриншоты и видео</a>
   + <a href="#allure">Allure</a>
+  + <a href="#allure-testops">Allure TestOps</a>
+  + <a href="#selenoid">Selenoid</a>
+  + <a href="#browserstack">Browserstack</a>
   + <a href="#telegram">Telegram</a>
   
 ## <a name="description">Описание</a>
@@ -52,14 +53,12 @@
 <a id="object"></a>
 ## :mag: Реализованные проверки
 
-<a id="launch"></a>
-# :computer: Запуск проекта
-  
-<a id="gradle-command"></a>
-## Gradle
+<a id="gradle-launch"></a>
+## :computer: Запуск проекта с помощью терминала
+
 Для запуска тестов с помощью Gradle используется команда:
 ```bash
-gradle clean -Dtag=<tag> -Dplatform=<platform> -Denv=<env>
+gradle clean test -Dtag=<tag> -Dplatform=<platform> -Denv=<env>
 ```
 `tag` - выбор вида тестов:
 >- *api*
@@ -80,21 +79,21 @@ gradle clean -Dtag=<tag> -Dplatform=<platform> -Denv=<env>
 
 В зависимости от выбранной платформы и окружения, будет использоваться определенный property file
 
-<a id="selenoid"></a>
-## <img alt="Selenoid" height="50" src="external/Selenoid.svg" width="50"/>Selenoid</a>
-
-Видео-пример выполнения UI-теста с помощью Selenoid
-
-<video src="https://user-images.githubusercontent.com/110110734/202859382-0d5509e0-a5a8-4c7f-9df0-9d8bcf16fc2f.mp4"
-controls="controls" style="max-width: 730px;" poster="/external/logos/Selenoid.svg"></video>
-
-<a id="jenkins"></a>
+<a id="jenkins-launch"></a>
 ##  <a href="https://jenkins.autotests.cloud/job/chitai-gorod/"><img alt="Jenkins" height="50" src="external/Jenkins.svg" width="50"/>Jenkins</a>
 
 Страница проекта в Jenkins
 
 <a href="https://jenkins.autotests.cloud/job/chitai-gorod/"><img src="https://user-images.githubusercontent.com/110110734/202859544-d8c8b67d-1dcf-48b0-8d80-6170ec8f19a4.png" alt="Jenkins">
 </a>
+
+Параметры сборки:
+>- *`tag` - выбор вида тестов*
+>- *`platform` - платформа*
+>- *`env` - окружение, на котором будут выполнятся тесты*
+>- *`browser` - браузер*
+>- *`REMOTE_URL` - адрес Selenoid*
+>- *`VIDEO_STORAGE` - адрес хранилища видео Selenoid*
 
 <a id="allure"></a>
 ## <a href="https://jenkins.autotests.cloud/job/chitai-gorod/allure/"><img alt="Allure" height="50" src="external/Allure.svg" width="50"/>Allure</a>
@@ -116,6 +115,49 @@ controls="controls" style="max-width: 730px;" poster="/external/logos/Selenoid.s
         </a>
         </td>
 </table>
+
+<a id="allure-testops"></a>
+## <a href="https://allure.autotests.cloud/project/1687/dashboards"><img alt="Allure TestOps" height="50" src="external/Allure TestOps.svg" width="50"/>Allure TestOps</a>
+
+Пример Allure TestOps отчёта
+
+<table>
+    <tr>
+        <td>
+        <a href="https://user-images.githubusercontent.com/110110734/202862964-974dfa9d-55ef-4a77-8406-2bc6952ea790.png">
+        <img src="https://user-images.githubusercontent.com/110110734/202862964-974dfa9d-55ef-4a77-8406-2bc6952ea790.png">
+        </a>
+        </td>
+   </tr>
+        <tr>
+        <td>
+        <a href="https://user-images.githubusercontent.com/110110734/202862978-f86145e3-4d34-4d7e-a0bb-35af7f5115a3.png">
+        <img src="https://user-images.githubusercontent.com/110110734/202862978-f86145e3-4d34-4d7e-a0bb-35af7f5115a3.png">
+        </a>
+        </td>
+        </tr>
+        <td>
+        <a href="https://user-images.githubusercontent.com/110110734/202862981-42f72adc-1519-4a39-bfd6-5f011ea82552.png">
+        <img src="https://user-images.githubusercontent.com/110110734/202862981-42f72adc-1519-4a39-bfd6-5f011ea82552.png">
+        </a>
+        </td>
+</table>
+
+<a id="selenoid"></a>
+## <img alt="Selenoid" height="50" src="external/Selenoid.svg" width="50"/> Selenoid</a>
+
+Видео-пример выполнения UI-теста с помощью Selenoid
+
+<video src="https://user-images.githubusercontent.com/110110734/202859382-0d5509e0-a5a8-4c7f-9df0-9d8bcf16fc2f.mp4"
+controls="controls" style="max-width: 730px;" poster="/external/logos/Selenoid.svg"></video>
+
+<a id="browserstack"></a>
+## <img alt="Browserstack" height="45" src="external/Browserstack.svg" width="45"/> Browserstack</a>
+
+Видео-пример выполнения Mobile-теста с помощью Browserstack
+
+<video src="https://user-images.githubusercontent.com/110110734/202863081-112a3796-fd9d-40ce-9684-392458f28ee8.mp4"
+controls="controls" style="max-width: 730px;" poster="/external/logos/Browserstack.svg"></video>
 
 <a id="telegram"></a>
 ## <a href="https://t.me/chitai_gorod_tests_bot"><img alt="Telegram" height="50" src="external/Telegram.svg" width="50"/>Telegram</a>
