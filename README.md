@@ -89,7 +89,7 @@ gradle clean test -Dtag=<tag> -Dplatform=<platform> -Denv=<env>
 >- *`platform` - платформа*
 >- *`env` - окружение, на котором будут выполнятся тесты*
 >- *`browser` - браузер*
->- *`REMOTE_URL` - адрес Selenoid*
+>- *`REMOTE_URL` - адрес Selenoid / Browserstack*
 >- *`VIDEO_STORAGE` - адрес хранилища видео Selenoid*
 
 <a id="allure"></a>
