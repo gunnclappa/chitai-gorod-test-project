@@ -4,7 +4,9 @@ import chitaigorod.helpers.ParamsForAPI;
 
 import java.util.Map;
 
-import static chitaigorod.tests.api.specs.Specification.*;
+import static chitaigorod.tests.api.specs.Specification.requestSpec;
+import static chitaigorod.tests.api.specs.Specification.requestSpecWebApi;
+import static chitaigorod.tests.api.specs.Specification.responseSpec;
 import static io.restassured.RestAssured.given;
 
 public class BasketPage extends MainPage {

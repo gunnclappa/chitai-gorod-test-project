@@ -7,14 +7,18 @@ import io.restassured.filter.log.LogDetail;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
 
-import static chitaigorod.helpers.CustomAllureListener.withCustomTemplates;
+import static chitaigorod.helpers.AllureAttachments.withCustomTemplates;
+
 
 public class Specification {
+
+    private static final String URI = "https://www.chitai-gorod.ru";
+    private static final String URI_WEB_API = "https://webapi.chitai-gorod.ru/web";
 
     private static final RequestSpecification REQUEST_SPECIFICATION = new RequestSpecBuilder()
             .addFilter(withCustomTemplates())
             .addCookie(AppConfigReader.Instance.read().cookieName(), AppConfigReader.Instance.read().cookieValue())
-            .setBaseUri("https://www.chitai-gorod.ru")
+            .setBaseUri(URI)
             .log(LogDetail.METHOD)
             .log(LogDetail.URI)
             .build();
@@ -26,7 +30,7 @@ public class Specification {
     private static final RequestSpecification REQUEST_SPECIFICATION_WEB_API = new RequestSpecBuilder()
             .addFilter(withCustomTemplates())
             .addCookie(AppConfigReader.Instance.read().cookieName(), AppConfigReader.Instance.read().cookieValue())
-            .setBaseUri("https://webapi.chitai-gorod.ru/web")
+            .setBaseUri(URI_WEB_API)
             .log(LogDetail.METHOD)
             .log(LogDetail.URI)
             .build();

@@ -7,7 +7,8 @@ import org.openqa.selenium.Cookie;
 
 import java.util.Map;
 
-import static chitaigorod.tests.api.specs.Specification.*;
+import static chitaigorod.tests.api.specs.Specification.requestSpecWebApi;
+import static chitaigorod.tests.api.specs.Specification.responseSpec;
 import static com.codeborne.selenide.Selenide.open;
 import static io.restassured.RestAssured.given;
 

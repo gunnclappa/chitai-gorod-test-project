@@ -1,9 +1,12 @@
 package chitaigorod.tests.ui.pages;
 
-import com.codeborne.selenide.*;
+import com.codeborne.selenide.SelenideElement;
+import com.codeborne.selenide.Condition;
 
 import static com.codeborne.selenide.Configuration.baseUrl;
-import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.$$;
+import static com.codeborne.selenide.Selenide.open;
 
 public class MainPage {
 

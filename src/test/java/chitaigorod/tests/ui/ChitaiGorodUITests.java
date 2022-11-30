@@ -1,7 +1,10 @@
 package chitaigorod.tests.ui;
 
 import com.codeborne.selenide.WebDriverRunner;
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -13,11 +16,7 @@ public final class ChitaiGorodUITests extends UITestBase {
 
     @BeforeEach
     @DisplayName("Открытие главной страницы")
-    public void openCheckPage(final TestInfo info) {
-
-        if (info.getDisplayName().equals("Проверка отображения инфо-текста на странице Закладки")) {
-            return;
-        }
+    public void openCheckPage() {
 
         step(String.format("Открытие страницы %s", baseUrl), () -> {
             mainPage.openPage();

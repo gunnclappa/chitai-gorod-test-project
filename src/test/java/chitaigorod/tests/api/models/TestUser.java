@@ -2,7 +2,9 @@ package chitaigorod.tests.api.models;
 
 import chitaigorod.config.AppConfigReader;
 
-import static chitaigorod.helpers.RandomUtils.*;
+import static chitaigorod.helpers.RandomUtils.getRandomSurname;
+import static chitaigorod.helpers.RandomUtils.getRandomName;
+import static chitaigorod.helpers.RandomUtils.getRandomSecondName;
 
 public abstract class TestUser {
 

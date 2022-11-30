@@ -2,6 +2,7 @@ package chitaigorod.helpers;
 
 import io.qameta.allure.Allure;
 import io.qameta.allure.Attachment;
+import io.qameta.allure.restassured.AllureRestAssured;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -14,6 +15,7 @@ import static com.codeborne.selenide.Selenide.sleep;
 
 public class AllureAttachments {
     public static final Logger LOGGER = LoggerFactory.getLogger(AllureAttachments.class);
+    private static final AllureRestAssured FILTER = new AllureRestAssured();
 
     @Attachment(value = "{attachName}", type = "text/plain")
     private static String addMessage(final String attachName, final String text) {
@@ -37,10 +39,9 @@ public class AllureAttachments {
     @Attachment(value = "Video", type = "text/html", fileExtension = ".html")
     public static String addVideoBrowserstack(final String sessionId) {
         return "<html><body><video width='100%' height='100%' controls autoplay><source src='"
-                + Browserstack.videoUrl(sessionId)
+                + BrowserstackAttachments.videoUrl(sessionId)
                 + "' type='video/mp4'></video></body></html>";
     }
-
 
     public static void addVideo(final String sessionId) {
         URL videoUrl = DriverUtils.getVideoUrl(sessionId);
@@ -63,5 +64,11 @@ public class AllureAttachments {
                 Allure.addAttachment("Video", "video/mp4", videoInputStream, "mp4");
             }
         }
+    }
+
+    public static AllureRestAssured withCustomTemplates() {
+        FILTER.setRequestTemplate("request.ftl");
+        FILTER.setResponseTemplate("response.ftl");
+        return FILTER;
     }
 }

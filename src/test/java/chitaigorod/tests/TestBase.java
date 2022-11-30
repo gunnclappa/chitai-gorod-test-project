@@ -1,6 +1,7 @@
 package chitaigorod.tests;
 
-import chitaigorod.config.*;
+import chitaigorod.config.WebConfig;
+import chitaigorod.config.WebConfigReader;
 import chitaigorod.drivers.BrowserstackMobileDriver;
 import chitaigorod.drivers.LocalAndRemoteWebDriver;
 import chitaigorod.drivers.LocalMobileDriver;
@@ -84,7 +85,7 @@ public class TestBase {
 
         Selenide.closeWebDriver();
 
-        if (PLATFORM.equals("ui") && ENV.equals("remote")) {
+        if (ENV.equals("remote")) {
             AllureAttachments.addVideo(sessionId);
         } else if (PLATFORM.equals("mobile") && ENV.equals("browserstack")) {
             AllureAttachments.addVideoBrowserstack(sessionId);

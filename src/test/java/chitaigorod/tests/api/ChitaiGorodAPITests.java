@@ -3,12 +3,17 @@ package chitaigorod.tests.api;
 import chitaigorod.tests.api.models.User;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.*;
+import org.junit.jupiter.params.provider.ValueSource;
+import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.params.provider.MethodSource;
+import org.junit.jupiter.params.provider.Arguments;
 
 import java.util.Map;
 import java.util.stream.Stream;
 
-import static chitaigorod.tests.api.models.TestUser.*;
+import static chitaigorod.tests.api.models.TestUser.createUser1;
+import static chitaigorod.tests.api.models.TestUser.createUser2;
+import static chitaigorod.tests.api.models.TestUser.createUser3;
 import static io.qameta.allure.Allure.step;
 import static org.assertj.core.api.Assertions.assertThat;
 

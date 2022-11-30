@@ -6,7 +6,7 @@ import org.aeonbits.owner.ConfigFactory;
 import static io.restassured.RestAssured.given;
 import static java.lang.String.format;
 
-public class Browserstack {
+public class BrowserstackAttachments {
 
     public static String videoUrl(final String sessionId) {
 

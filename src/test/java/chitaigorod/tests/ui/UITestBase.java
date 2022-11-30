@@ -1,7 +1,11 @@
 package chitaigorod.tests.ui;
 
 import chitaigorod.tests.TestBase;
-import chitaigorod.tests.ui.pages.*;
+import chitaigorod.tests.ui.pages.MainPage;
+import chitaigorod.tests.ui.pages.SearchPage;
+import chitaigorod.tests.ui.pages.ShopsPage;
+import chitaigorod.tests.ui.pages.CatalogPage;
+import chitaigorod.tests.ui.pages.BasketPage;
 
 public class UITestBase extends TestBase {
 
