@@ -6,17 +6,16 @@
 ## :bookmark_tabs: Содержание
 * <a href="#description">Описание</a>
 * <a href="#stack">Cтек технологий</a>
-* <a href="#object">Реализованные проверки</a>
-* <a href="#launch">Запуск проекта</a>
-   + <a href="#gradle-command">Gradle</a>
-   + <a href="#idea-config">Запуск конфигурации в IDEA</a>
-* <a>Скриншоты и видео</a>
-  + <a href="#selenoid">Selenoid</a>
-  + <a href="#jenkins">Jenkins</a>
+* <a href="#gradle-launch">Запуск проекта с помощью терминала</a>
+* <a href="#jenkins-launch">Запуск проекта с помощью Jenkins</a>
+* <a>Отчётность, скриншоты и видео</a>
   + <a href="#allure">Allure</a>
+  + <a href="#allure-testops">Allure TestOps</a>
+  + <a href="#selenoid">Selenoid</a>
+  + <a href="#browserstack">Browserstack</a>
   + <a href="#telegram">Telegram</a>
   
-## <a name="description">Описание</a>
+## 📓 <a name="description">Описание</a>
 Проект содержит в себе тесты на UI, API и Mobile (Android)\
 Список того, что было реализовано в проекте:
 - [x] Реализация `Page Object` с использованием `Chain of Invocations`
@@ -24,15 +23,12 @@
 - [x] Параллельное выполнение тестов с помощью `JUnit 5`
 - [x] Генерация рандомных значений с помощью библиотеки `Faker`
 - [x] Параметризованные билды `Jenkins`
-- [x] Конфигурационные файлы для запуска билдов с различными параметрами
 - [x] Конфиги с помощью библиотеки `Owner`
 - [x] Использование `POJO` для моделей для API тестов
-- [x] Objects serialization/deserialization for API requests/responses using `Jackson`
 - [x] Использование Request/Response спецификаций для API тестов
+- [x] Использование `GPath` для поиска информации на html-странице
 - [x] Кастомный Allure listener для форматированного логирования API запросов/ответов
 - [x] Интеграция с `Allure TestOps`
-- [x] Autotests as test documentation
-- [x] Интеграция с `Jira`
 
 
 <a id="stack"></a>
@@ -54,17 +50,12 @@
 <a href="https://www.browserstack.com/"><img alt="Browserstack" height="45" src="external/Browserstack.svg" width="45"/></a>
 </div>
 
-<a id="object"></a>
-## :mag: Реализованные проверки
+<a id="gradle-launch"></a>
+## :computer: Запуск проекта с помощью терминала
 
-<a id="launch"></a>
-# :computer: Запуск проекта
-  
-<a id="gradle-command"></a>
-## Gradle
 Для запуска тестов с помощью Gradle используется команда:
 ```bash
-gradle clean <tag> -Dplatform=<platform> -Denv=<env>
+gradle clean test -Dtag=<tag> -Dplatform=<platform> -Denv=<env>
 ```
 `tag` - выбор вида тестов:
 >- *api*
@@ -85,60 +76,89 @@ gradle clean <tag> -Dplatform=<platform> -Denv=<env>
 
 В зависимости от выбранной платформы и окружения, будет использоваться определенный property file
 
-<a id="idea-config"></a>  
-## Запуск конфигурации в IDEA
-Для удобства запуска тестов конфигурационные файлы IDEA добавлены в репозиторий
-<p  align="center">
-<img src="external/idea-conf.png" alt="IDEARunConfigurations" width="550">
-</p>
+<a id="jenkins-launch"></a>
+##  <a href="https://jenkins.autotests.cloud/job/chitai-gorod/"><img alt="Jenkins" height="50" src="external/Jenkins.svg" width="50"/>Запуск проекта с помощью Jenkins</a>
 
-<a id="selenoid"></a>
-## <a href="https://selenoid.autotests.cloud/video/4a544544d069a501ee461083c9babb79.mp4"><img alt="Selenoid" height="50" src="external/Selenoid.svg" width="50"/>Selenoid</a>
+Страница проекта в Jenkins
 
-<video src="https://user-images.githubusercontent.com/110110734/193814550-cef6ecdb-f702-4fa5-a6cf-4cf6cc523097.mp4"
-controls="controls" style="max-width: 730px;" poster="/external/logos/Selenoid.svg">
-Видео не доступно для этого браузера
-</video>
-
-<a id="jenkins"></a>
-##  <a href="https://jenkins.autotests.cloud/job/Nurekenov-homework16/"><img alt="Jenkins" height="50" src="external/Jenkins.svg" width="50"/>Jenkins</a>
-  
-<a href="https://jenkins.autotests.cloud/job/Nurekenov-homework16/">
-
-<img src="https://user-images.githubusercontent.com/110110734/193813994-88c78b62-b6d9-4d00-ac2a-d7eae8e491b7.png" alt="Jenkins">
+<a href="https://jenkins.autotests.cloud/job/chitai-gorod/"><img src="https://user-images.githubusercontent.com/110110734/202859544-d8c8b67d-1dcf-48b0-8d80-6170ec8f19a4.png" alt="Jenkins">
 </a>
 
+Параметры сборки:
+>- *`tag` - выбор вида тестов*
+>- *`platform` - платформа*
+>- *`env` - окружение, на котором будут выполнятся тесты*
+>- *`browser` - браузер*
+>- *`REMOTE_URL` - адрес Selenoid / Browserstack*
+>- *`VIDEO_STORAGE` - адрес хранилища видео Selenoid*
+
 <a id="allure"></a>
-## <a href="https://jenkins.autotests.cloud/job/Nurekenov-homework16/allure//"><img alt="Allure" height="50" src="external/Allure.svg" width="50"/>Allure</a>
+## <a href="https://jenkins.autotests.cloud/job/chitai-gorod/allure/"><img alt="Allure" height="50" src="external/Allure.svg" width="50"/>Allure</a>
+
+Пример Allure отчёта
 
 <table>
     <tr>
         <td>
-        <a href="https://jenkins.autotests.cloud/job/Nurekenov-homework16/allure/">
-        <img src="https://user-images.githubusercontent.com/110110734/193815548-9ba63976-7543-438d-b4aa-51fea0db888e.png">
+        <a href="https://user-images.githubusercontent.com/110110734/202859651-ba7db225-1307-42d1-a756-acb5ee53464a.png">
+        <img src="https://user-images.githubusercontent.com/110110734/202859651-ba7db225-1307-42d1-a756-acb5ee53464a.png">
         </a>
         </td>
-        <td>
-        <a href="https://jenkins.autotests.cloud/job/Nurekenov-homework16/allure/#suites/ef54aae4465c6d48b51f0d82b2bbde21/238f0e3250120aee/">
-        <img src="https://user-images.githubusercontent.com/110110734/193815656-d60c090e-77ba-4f08-b4bb-d3860e2976a3.png">
-        </a>
-        </td>
-    </tr>
+        </tr>
         <tr>
         <td>
-        <a href="https://jenkins.autotests.cloud/job/Nurekenov-homework16/allure/#suites/ef54aae4465c6d48b51f0d82b2bbde21/238f0e3250120aee/">
-        <img src="https://user-images.githubusercontent.com/110110734/193815846-f7c8675e-ae5c-44b4-a451-a66a32037746.png">
+        <a href="https://user-images.githubusercontent.com/110110734/202859732-4dc2727f-69bf-4828-9d87-08ead0eb67e4.png">
+        <img src="https://user-images.githubusercontent.com/110110734/202859732-4dc2727f-69bf-4828-9d87-08ead0eb67e4.png">
         </a>
         </td>
-        <td>
-        <a href="https://jenkins.autotests.cloud/job/Nurekenov-homework16/allure/#suites/ef54aae4465c6d48b51f0d82b2bbde21/e86211dfbb768d26/">
-        <img src="https://user-images.githubusercontent.com/110110734/193815857-a19d8da8-d07f-4e2a-a4f4-893eae213dbf.png">
-        </a>
-        </td>
-    </tr>
 </table>
 
-<a id="telegram"></a>
-## <a href="https://t.me/MarketKzNotificationBot"><img alt="Telegram" height="50" src="external/Telegram.svg" width="50"/>Telegram</a>
+<a id="allure-testops"></a>
+## <a href="https://allure.autotests.cloud/project/1687/dashboards"><img alt="Allure TestOps" height="50" src="external/Allure TestOps.svg" width="50"/>Allure TestOps</a>
 
-![Telegram screenshot](https://user-images.githubusercontent.com/110110734/193813963-0e4ec16a-b6d3-45d3-bf0d-dc90eb689380.png)
+Пример Allure TestOps отчёта
+
+<table>
+    <tr>
+        <td>
+        <a href="https://user-images.githubusercontent.com/110110734/202862964-974dfa9d-55ef-4a77-8406-2bc6952ea790.png">
+        <img src="https://user-images.githubusercontent.com/110110734/202862964-974dfa9d-55ef-4a77-8406-2bc6952ea790.png">
+        </a>
+        </td>
+   </tr>
+        <tr>
+        <td>
+        <a href="https://user-images.githubusercontent.com/110110734/202862978-f86145e3-4d34-4d7e-a0bb-35af7f5115a3.png">
+        <img src="https://user-images.githubusercontent.com/110110734/202862978-f86145e3-4d34-4d7e-a0bb-35af7f5115a3.png">
+        </a>
+        </td>
+        </tr>
+        <td>
+        <a href="https://user-images.githubusercontent.com/110110734/202862981-42f72adc-1519-4a39-bfd6-5f011ea82552.png">
+        <img src="https://user-images.githubusercontent.com/110110734/202862981-42f72adc-1519-4a39-bfd6-5f011ea82552.png">
+        </a>
+        </td>
+</table>
+
+<a id="selenoid"></a>
+## <img alt="Selenoid" height="50" src="external/Selenoid.svg" width="50"/> Selenoid</a>
+
+Видео-пример выполнения UI-теста с помощью Selenoid
+
+<video src="https://user-images.githubusercontent.com/110110734/202859382-0d5509e0-a5a8-4c7f-9df0-9d8bcf16fc2f.mp4"
+controls="controls" style="max-width: 730px;" poster="/external/logos/Selenoid.svg"></video>
+
+<a id="browserstack"></a>
+## <img alt="Browserstack" height="45" src="external/Browserstack.svg" width="45"/> Browserstack</a>
+
+Видео-пример выполнения Mobile-теста с помощью Browserstack
+
+<video src="https://user-images.githubusercontent.com/110110734/202863081-112a3796-fd9d-40ce-9684-392458f28ee8.mp4"
+controls="controls" style="max-width: 730px;" poster="/external/logos/Browserstack.svg"></video>
+
+<a id="telegram"></a>
+## <a href="https://t.me/chitai_gorod_tests_bot"><img alt="Telegram" height="50" src="external/Telegram.svg" width="50"/>Telegram</a>
+
+Пример уведомления в Telegram-бот по окончании выполнения тестов
+
+![Telegram screenshot](https://user-images.githubusercontent.com/110110734/202859925-48e64223-96aa-41b1-9a32-2ca475a547c5.png)
