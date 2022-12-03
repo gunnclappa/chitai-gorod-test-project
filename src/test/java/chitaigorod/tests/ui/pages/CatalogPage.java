@@ -5,7 +5,6 @@ import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
-import static com.codeborne.selenide.Selenide.executeJavaScript;
 
 public class CatalogPage {
 
@@ -13,7 +12,7 @@ public class CatalogPage {
     private final SelenideElement calendarsLink = $$("a.navigation__link")
             .findBy(Condition.text("Календари"));
 
-    public final CatalogPage openCalendarsPage() {
+    public final CatalogPage clickCalendarsButton() {
         calendarsLink.click();
 
         return this;
@@ -21,14 +20,6 @@ public class CatalogPage {
 
     public final CatalogPage checkCategory(final String categoryName) {
         headerText.shouldHave(Condition.text(categoryName));
-
-        return this;
-    }
-
-    public final CatalogPage hideNotification() {
-        executeJavaScript(
-                "$('#push-notification-balloon').hide();"
-        );
 
         return this;
     }

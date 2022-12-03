@@ -9,9 +9,9 @@ import static chitaigorod.tests.api.specs.Specification.requestSpecWebApi;
 import static chitaigorod.tests.api.specs.Specification.responseSpec;
 import static io.restassured.RestAssured.given;
 
-public class BookmarksPage extends MainPage {
+public class BookmarksPageAPI {
 
-    public final BookmarksPage addBookToBookmarks(final String bookID) {
+    public final BookmarksPageAPI addBookToBookmarks(final String bookID) {
 
         Map<String, String> paramsForAddBookToBookmarks = ParamsForAPI.paramsForAddBookToBookmarks(bookID);
 
@@ -37,7 +37,7 @@ public class BookmarksPage extends MainPage {
                         + ".@data-book-id");
     }
 
-    public final BookmarksPage deleteBooksFromBookmarks(final String bookID) {
+    public final BookmarksPageAPI deleteBooksFromBookmarks(final String bookID) {
 
         Map<String, String> paramsForDeleteBookFromBookmarks = ParamsForAPI.paramsForDeleteBookFromBookmarks(bookID);
 

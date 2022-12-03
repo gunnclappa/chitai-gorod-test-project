@@ -1,14 +1,16 @@
 package chitaigorod.tests.api;
 
-import chitaigorod.tests.api.pages.BasketPage;
-import chitaigorod.tests.api.pages.BookmarksPage;
-import chitaigorod.tests.api.pages.MainPage;
-import chitaigorod.tests.api.pages.PersonalPage;
+import chitaigorod.tests.api.pages.BasketPageAPI;
+import chitaigorod.tests.api.pages.BookmarksPageAPI;
+import chitaigorod.tests.api.pages.MainPageAPI;
+import chitaigorod.tests.api.pages.PersonalPageAPI;
+import org.junit.jupiter.api.Tag;
 
+@Tag("API")
 public class APITestBase {
 
-    protected final MainPage mainPage = new MainPage();
-    protected final PersonalPage personalPage = new PersonalPage();
-    protected final BookmarksPage bookmarksPage = new BookmarksPage();
-    protected final BasketPage basketPage = new BasketPage();
+    protected final MainPageAPI mainPageAPI = new MainPageAPI();
+    protected final PersonalPageAPI personalPage = new PersonalPageAPI();
+    protected final BookmarksPageAPI bookmarksAPI = new BookmarksPageAPI();
+    protected final BasketPageAPI basketAPI = new BasketPageAPI();
 }

@@ -10,9 +10,9 @@ import static chitaigorod.tests.api.specs.Specification.requestSpec;
 import static chitaigorod.tests.api.specs.Specification.responseSpec;
 import static io.restassured.RestAssured.given;
 
-public class PersonalPage extends MainPage {
+public class PersonalPageAPI {
 
-    public final PersonalPage changePersonalData(final User user) {
+    public final PersonalPageAPI changePersonalData(final User user) {
 
         Map<String, String> paramsForChangePersonalData = ParamsForAPI.paramsForChangePersonalData(user);
 

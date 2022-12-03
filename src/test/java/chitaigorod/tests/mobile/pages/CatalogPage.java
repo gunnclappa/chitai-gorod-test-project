@@ -16,13 +16,13 @@ public class CatalogPage {
     private final SelenideElement toolbar = $(AppiumBy.id("ru.chitaigorod.mobile:id/toolbar"))
             .$(AppiumBy.className("android.widget.TextView"));
 
-    public final CatalogPage openSouvenirsPage() {
+    public final CatalogPage clickSouvenirsPage() {
         souvenirs.click();
 
         return this;
     }
 
-    public final CatalogPage openCalendarsPage() {
+    public final CatalogPage clickCalendarsPage() {
         calendars.click();
 
         return this;

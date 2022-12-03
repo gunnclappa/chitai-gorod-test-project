@@ -20,19 +20,19 @@ public class MainPage {
         return this;
     }
 
-    public final MainPage openBasket() {
+    public final MainPage clickBasketButton() {
         basket.click();
 
         return this;
     }
 
-    public final MainPage openCatalog() {
+    public final MainPage clickCatalogButton() {
         catalog.click();
 
         return this;
     }
 
-    public final MainPage openProfile() {
+    public final MainPage clickProfileButton() {
         profile.click();
 
         return this;

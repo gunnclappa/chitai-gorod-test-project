@@ -13,26 +13,26 @@ public class SearchPage {
     private final SelenideElement purchaseButton = $$(".js__card_button_text")
             .findBy(Condition.text("Оформить"));
 
-    public final SearchPage checkIfBookExist(final String bookName) {
+    public final SearchPage checkIfBookIsFound(final String bookName) {
         bookTitle.shouldHave(Condition.text(bookName));
 
         return this;
     }
 
-    public final SearchPage buyButtonClick(final String buyText) {
+    public final SearchPage clickBuyButton(final String buyText) {
         buyButton.shouldBe(Condition.text(buyText));
         buyButton.click();
 
         return this;
     }
 
-    public final SearchPage checkIfTextChanged(final String purchaseText) {
+    public final SearchPage checkIfTextIsChanged(final String purchaseText) {
         buyButton.shouldBe(Condition.text(purchaseText));
 
         return this;
     }
 
-    public final SearchPage purchaseButtonClick() {
+    public final SearchPage clickPurchaseButton() {
         purchaseButton.click();
 
         return this;

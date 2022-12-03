@@ -12,9 +12,9 @@ import static chitaigorod.tests.api.specs.Specification.responseSpec;
 import static com.codeborne.selenide.Selenide.open;
 import static io.restassured.RestAssured.given;
 
-public class MainPage {
+public class MainPageAPI {
 
-    public final MainPage setCookie() {
+    public final MainPageAPI setCookie() {
 
         open("/ii/img/general/basket.svg");
         Cookie authCookie = new Cookie(AppConfigReader.Instance.read().cookieName(),
@@ -38,7 +38,7 @@ public class MainPage {
                 .path("aggregations.titles[0]");
     }
 
-    public final MainPage addBooksToBasket(final String bookId, final int booksCount) {
+    public final MainPageAPI addBooksToBasket(final String bookId, final int booksCount) {
 
         Map<String, String> paramsForAddBooksToBasket = ParamsForAPI.paramsForAddBooksToBasket(bookId, booksCount);
 

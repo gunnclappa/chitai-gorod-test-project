@@ -10,7 +10,7 @@ public class ShopsPage {
 
     private final SelenideElement headerText = $(".color_blue");
 
-    public final ShopsPage cityLinkClick(final String cityName) {
+    public final ShopsPage clickCityLink(final String cityName) {
         final SelenideElement cityLink = $(byText(cityName));
         cityLink.click();
 

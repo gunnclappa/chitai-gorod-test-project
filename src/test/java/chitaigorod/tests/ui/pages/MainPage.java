@@ -1,12 +1,12 @@
 package chitaigorod.tests.ui.pages;
 
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.Condition;
 
 import static com.codeborne.selenide.Configuration.baseUrl;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
-import static com.codeborne.selenide.Selenide.open;
 
 public class MainPage {
 
@@ -19,8 +19,8 @@ public class MainPage {
             .findBy(Condition.text("Сувениры"));
 
 
-    public final MainPage openPage() {
-        open(baseUrl);
+    public final MainPage open() {
+        Selenide.open(baseUrl);
 
         return this;
     }
@@ -33,19 +33,19 @@ public class MainPage {
         return this;
     }
 
-    public final MainPage openShopsPage() {
+    public final MainPage clickShopsButton() {
         shopsLink.click();
 
         return this;
     }
 
-    public final MainPage openSouvenirsPage() {
+    public final MainPage clickSouvenirsButton() {
         souvenirsLink.click();
 
         return this;
     }
 
-    public final MainPage openBasketPage() {
+    public final MainPage clickBasketButton() {
         basketLink.click();
 
         return this;

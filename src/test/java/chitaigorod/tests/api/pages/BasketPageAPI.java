@@ -9,7 +9,7 @@ import static chitaigorod.tests.api.specs.Specification.requestSpecWebApi;
 import static chitaigorod.tests.api.specs.Specification.responseSpec;
 import static io.restassured.RestAssured.given;
 
-public class BasketPage extends MainPage {
+public class BasketPageAPI {
 
     public final int booksInBasketCount() {
 
@@ -21,7 +21,7 @@ public class BasketPage extends MainPage {
                 .getInt("**.find{it.@class == 'item-counter__value js__item-counter__value'}.@value");
     }
 
-    public final BasketPage deleteBooksFromBasket(final String bookId) {
+    public final BasketPageAPI deleteBooksFromBasket(final String bookId) {
 
         Map<String, String> paramsForDeleteBooksFromBasket = ParamsForAPI.paramsForDeleteBooksFromBasket(bookId);
 
