@@ -22,7 +22,7 @@ import static com.codeborne.selenide.Configuration.baseUrl;
 import static com.codeborne.selenide.Configuration.browser;
 import static io.qameta.allure.Allure.step;
 
-@Tag("UI")
+@Tag("ui")
 public class UITestBase extends TestBase {
 
     private static final WebConfig WEB_CONFIG = WebConfigReader.Instance.read();
@@ -41,14 +41,11 @@ public class UITestBase extends TestBase {
     }
 
     public static void uiPlatform(final String env) throws Exception {
-        switch (env) {
-            case "remote":
-            case "local":
-                LocalAndRemoteWebDriver projectConfiguration = new LocalAndRemoteWebDriver(WEB_CONFIG);
-                projectConfiguration.projectConfig();
-                break;
-            default:
-                throw new Exception("Wrong env");
+        if (env.equals("remote") || env.equals("local")) {
+            LocalAndRemoteWebDriver projectConfiguration = new LocalAndRemoteWebDriver(WEB_CONFIG);
+            projectConfiguration.projectConfig();
+        } else {
+            throw new Exception("Wrong env");
         }
     }
 

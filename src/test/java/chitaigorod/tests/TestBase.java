@@ -12,7 +12,7 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class TestBase {
 
-    static final String PLATFORM = System.getProperty("platform");
+    static final String TAG = System.getProperty("tag");
     static final String ENV = System.getProperty("env");
 
     @BeforeAll
@@ -21,7 +21,9 @@ public class TestBase {
     }
 
     private static void selectDriver() throws Exception {
-        switch (PLATFORM) {
+        switch (TAG) {
+            case "api":
+                break;
             case "mobile":
                 mobilePlatform(ENV);
                 break;

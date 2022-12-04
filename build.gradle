@@ -54,7 +54,7 @@ tasks.withType(Test) {
             includeTags System.getProperty("tag")
         }
     }
-    if (System.getProperty("tag") == "UI" && System.getProperty("env") == "local") {
+    if (System.getProperty("tag") == "ui" && System.getProperty("env") == "local") {
         systemProperties += [
                 'junit.jupiter.execution.parallel.enabled'             : true,
                 'junit.jupiter.execution.parallel.mode.default'        : 'concurrent',

@@ -34,7 +34,7 @@ public class PersonalPageAPI {
         return this;
     }
 
-    public final Map<String, String> checkPersonalData() {
+    public final Map<String, String> getPersonalData() {
 
         String surname = given()
                 .spec(requestSpec())

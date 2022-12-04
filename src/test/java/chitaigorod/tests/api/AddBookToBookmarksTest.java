@@ -12,16 +12,13 @@ public final class AddBookToBookmarksTest extends APITestBase {
     @ParameterizedTest(name = "Проверка добавления книги {0} в закладки")
     void addBookToBookmarksTest(final String bookID) {
 
-        step("Добавление книги в закладки", () -> {
-            bookmarksAPI.addBookToBookmarks(bookID);
-        });
+        step("Добавление книги в закладки", () ->
+                bookmarksAPI.addBookToBookmarks(bookID));
 
-        step("Проверка наличия книги в закладках", () -> {
-            assertThat(bookmarksAPI.checkBookInBookmarksPage()).isEqualTo(bookID);
-        });
+        step("Проверка наличия книги в закладках", () ->
+                assertThat(bookmarksAPI.checkBookInBookmarksPage()).isEqualTo(bookID));
 
-        step("Удаление книги из закладок", () -> {
-            bookmarksAPI.deleteBooksFromBookmarks(bookID);
-        });
+        step("Удаление книги из закладок", () ->
+                bookmarksAPI.deleteBooksFromBookmarks(bookID));
     }
 }

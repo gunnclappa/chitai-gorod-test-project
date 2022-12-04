@@ -8,12 +8,9 @@ import org.aeonbits.owner.Config;
 })
 public interface AppConfig extends Config {
 
-    @Key("cookieName")
     String cookieName();
 
-    @Key("cookieValue")
     String cookieValue();
 
-    @Key("data[login]")
     String login();
 }

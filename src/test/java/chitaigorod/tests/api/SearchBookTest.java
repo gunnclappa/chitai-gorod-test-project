@@ -12,8 +12,7 @@ public final class SearchBookTest extends APITestBase {
     @ParameterizedTest(name = "Поиск книги по названию {0}")
     void searchBookTest(final String bookName) {
 
-        step(String.format("Поиск книги с названием %s", bookName), () -> {
-            assertThat(mainPageAPI.searchBook(bookName)).contains(bookName);
-        });
+        step(String.format("Поиск книги с названием %s", bookName), () ->
+                assertThat(mainPageAPI.searchBook(bookName)).contains(bookName));
     }
 }

@@ -12,16 +12,13 @@ public final class AddBooksToBasketTest extends APITestBase {
     @ParameterizedTest(name = "Проверка добавления {1} книг {0} в корзину")
     void addBooksToBasketTest(final String bookId, final int booksCount) {
 
-        step(String.format("Добавление %s книг в корзину", booksCount), () -> {
-            mainPageAPI.addBooksToBasket(bookId, booksCount);
-        });
+        step(String.format("Добавление %s книг в корзину", booksCount), () ->
+                mainPageAPI.addBooksToBasket(bookId, booksCount));
 
-        step(String.format("Проверка, что в корзине %s книг", booksCount), () -> {
-            assertThat(basketAPI.booksInBasketCount()).isEqualTo(booksCount);
-        });
+        step(String.format("Проверка, что в корзине %s книг", booksCount), () ->
+                assertThat(basketAPI.booksInBasketCount()).isEqualTo(booksCount));
 
-        step("Удаление книги из корзины", () -> {
-            basketAPI.deleteBooksFromBasket(bookId);
-        });
+        step("Удаление книги из корзины", () ->
+                basketAPI.deleteBooksFromBasket(bookId));
     }
 }

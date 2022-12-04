@@ -19,7 +19,7 @@ import org.junit.jupiter.api.Tag;
 import static com.codeborne.selenide.Configuration.browser;
 import static io.qameta.allure.Allure.step;
 
-@Tag("Mobile")
+@Tag("mobile")
 public class MobileTestBase extends TestBase {
 
     protected final WelcomePage welcomePage = new WelcomePage();

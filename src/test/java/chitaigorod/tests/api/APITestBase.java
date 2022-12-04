@@ -6,7 +6,7 @@ import chitaigorod.tests.api.pages.MainPageAPI;
 import chitaigorod.tests.api.pages.PersonalPageAPI;
 import org.junit.jupiter.api.Tag;
 
-@Tag("API")
+@Tag("api")
 public class APITestBase {
 
     protected final MainPageAPI mainPageAPI = new MainPageAPI();

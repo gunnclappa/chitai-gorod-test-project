@@ -18,12 +18,11 @@ public final class ChangeUserDataTest extends APITestBase {
     @ParameterizedTest(name = "Проверка смены личных данных пользователя")
     void changeUserDataTest(final User user) {
 
-        step("Смена личных данных пользователя", () -> {
-            personalPage.changePersonalData(user);
-        });
+        step("Смена личных данных пользователя", () ->
+                personalPage.changePersonalData(user));
 
         step("Проверка успешности смены личных данных", () -> {
-            Map<String, String> userData = personalPage.checkPersonalData();
+            Map<String, String> userData = personalPage.getPersonalData();
 
             assertThat(userData.get("surname")).isEqualTo(user.getSurname());
             assertThat(userData.get("name")).isEqualTo(user.getName());
