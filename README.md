@@ -55,15 +55,10 @@
 
 Для запуска тестов с помощью Gradle используется команда:
 ```bash
-gradle clean test -Dtag=<tag> -Dplatform=<platform> -Denv=<env>
+gradle clean test -Dtag=<tag> -Denv=<env>
 ```
 `tag` - выбор вида тестов:
 >- *api*
->- *ui*
->- *mobile*
-  
-`platform` - платформа:
->- *\<не задаётся\> (для API тестов)*
 >- *ui*
 >- *mobile*
   
@@ -86,7 +81,6 @@ gradle clean test -Dtag=<tag> -Dplatform=<platform> -Denv=<env>
 
 Параметры сборки:
 >- *`tag` - выбор вида тестов*
->- *`platform` - платформа*
 >- *`env` - окружение, на котором будут выполнятся тесты*
 >- *`browser` - браузер*
 >- *`REMOTE_URL` - адрес Selenoid / Browserstack*
